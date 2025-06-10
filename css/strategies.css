@@ -11,7 +11,7 @@
 
 .intro-text {
     max-width: 1200px;
-    margin: 0 auto var(--space-xl);
+    margin: var(--space-md) auto var(--space-lg); /* Added space above text, lowered space below text */
     padding: 0 var(--space-md);
     text-align: center;
     font-family: 'Avenir', system-ui, sans-serif;
@@ -223,6 +223,7 @@
     color: var(--color-yellow);
     font-family: 'DIN1451', system-ui, sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
+    margin-top: 30px;
     margin-bottom: var(--space-md);
     text-transform: uppercase;
     letter-spacing: 2px;
