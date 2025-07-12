@@ -1,0 +1,236 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #00334C; 
+  color: white; 
+}
+
+/* Base section styling */
+.section {
+  width: 100vw;
+  height: 100vh;
+  padding: 80px 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.card-section {
+  width: 90%;
+  max-width: 1200px; 
+  margin: 40px auto;
+  padding: 60px 32px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+
+/* Section One - Text far right */
+.section-one {
+  background-color: #00334C;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.section-one-container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: 40px;
+  text-align: center;
+}
+
+
+.section-title {
+  font-size: 2.5rem; 
+  margin-bottom: 10px;
+}
+
+.small-paragraph {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.section-image {
+  width: 150px;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Section Two - Text far right */
+.section-two {
+  display: flex; 
+  background-color: #818387;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 60px 32px; 
+}
+
+
+/* Section Three - Text centered */
+.section-three {
+  text-align: center;
+  background-color: #56B2CB;
+}
+
+.center-align-container {
+  max-width: 95vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.section-three-title {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  
+}
+
+.section-three-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Section Four - Text far right */
+.section-four {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  background-color: #F7E214;
+
+}
+
+.student-quote-box,
+.results-box {
+  max-width: 95vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.quote-title,
+.results-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00334C;
+}
+
+.student-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #00334C;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.results-list {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  font-size: 1.3rem;
+  line-height: 2;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #00334C;
+}
+
+/* Section Five - Image left, text right */
+.section-five {
+  background-color: #00334C; 
+  padding: 60px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right-align-container {
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+}
+
+.section-five-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.section-five-list {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  font-size: 1.3rem;
+  line-height: 2;
+}
+
+/* Typography and Section Tweaks */
+
+/* Titles */
+.section-one h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.section-title,
+.quote-title,
+.results-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00334C;
+}
+
+.section-three-title,
+.section-three h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.section-five-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Paragraphs and Lists */
+.section-one p {
+  font-size: 1.5rem;  
+  line-height: 1.8;
+  color: white;
+}
+
+.section-three p {
+  font-size: 1.5rem;  
+  line-height: 1.8;
+  color: white;
+}
+
+/* Special List Styles */
+.section-five-list,
+.results-list {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 2;
+}
+
+/* Accent Box */
+.accent-box {
+  background-color: #E5F3FA;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
