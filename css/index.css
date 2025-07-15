@@ -1,128 +1,16 @@
-:root {
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-}
+/* ==========================================================================
+   INDEX PAGE SPECIFIC STYLES - Non-Critical (Loaded Deferred)
+   Note: Critical above-the-fold styles are inlined in index.html
+   ========================================================================== */
 
-@media (min-width: 768px) {
-    .index-nav {
-        background-image: url('../img/PREP_KC_Homepage_Header.jpg');
-        background-size: cover;
-        background-position: top center;
-        background-repeat: no-repeat;
-        height: 35vh;
-        min-height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-    }
-    /* Optional: Add a subtle overlay if nav text needs contrast */
-    .index-nav::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60%; /* Cover only the top part */
-        background: linear-gradient(to bottom, rgba(0, 51, 76, 0.4), transparent); /* Darken top slightly */
-        z-index: 1;
-        pointer-events: none; /* Allow clicks through */
-    }
-    #nav-container {
-        position: relative; /* Ensure nav is above overlay */
-        z-index: 2;
-        width: 100%; /* Ensure nav container takes full width */
-        max-width: var(--container-max-width, 1200px); /* Align nav with content */
-        padding: 0 var(--container-padding, var(--space-lg)); /* Add padding */
-    }
-}
-
+/* Enhanced navigation styles - loaded after critical CSS */
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-    color: var(--color-yellow) !important; /* Change the background color on hover, focus, and active */
+    color: var(--color-yellow);
 }
 
-.navbar-brand img {
-    max-height: 180px; 
-    width: auto;
-}
-
-.container-fluid {
-    display: flex;
-    padding: 0 var(--space-md);
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    gap: 8px;
-    flex-direction: row; /* Default to row */
-}
-
-/* Add media query for small screens using Bootstrap's breakpoint */
-@media (max-width: 576px) { /* Bootstrap's sm breakpoint */
-    .container-fluid {
-        flex-direction: column;
-        padding: 0 var(--space-sm);
-    }
-
-    .prep-card {
-        height: 25vh;
-        min-height: 150px; /* Add minimum height */
-        margin-bottom: 8px; /* Add some spacing between stacked cards */
-    }
-}
-
-/* Adjust existing media queries to match Bootstrap breakpoints */
-@media (max-width: 768px) { /* Bootstrap's md breakpoint */
-    .prep-card .letter {
-        font-size: 15vh;
-    }
-    
-    .prep-card .phrase {
-        font-size: 1.5em;
-    }
-}
-
-/* Base card styles */
-.prep-card {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 45vh;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 24px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transform-origin: center;
-}
-
-/* Letter styles */
-.prep-card .letter {
-    font-size: clamp(15vh, 20vw, 25vh);
-    color: var(--color-white);
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Phrase styles */
+/* Advanced prep card styles - hover effects and phrases */
 .prep-card .phrase {
     position: absolute;
     width: 100%;
@@ -138,7 +26,7 @@
     transition: opacity 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: linear-gradient(
         135deg,
-        rgba(0, 51, 76, 0.95),  /* Your navy color */
+        rgba(0, 51, 76, 0.95),
         rgba(0, 51, 76, 0.85)
     );
     padding: 1.5rem;
@@ -150,7 +38,7 @@
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Hover effects */
+/* Hover effects - enhanced animations */
 .prep-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-yellow);
@@ -165,23 +53,6 @@
 
 .prep-card:hover .phrase {
     opacity: 1;
-}
-
-/* Individual card background styles */
-#card1.prep-card {
-    background: linear-gradient(135deg, var(--color-turquoise), #3498db);
-}
-
-#card2.prep-card {
-    background: linear-gradient(135deg, var(--color-gray), #95a5a6);
-}
-
-#card3.prep-card {
-    background: linear-gradient(135deg, var(--color-navy), #2c3e50);
-}
-
-#card4.prep-card {
-    background: linear-gradient(135deg, var(--color-yellow), #f1c40f);
 }
 
 /* Background image hover effects */
@@ -219,7 +90,7 @@
     background-image: url('../img/three.jpg');
 }
 
-/* Responsive styles */
+/* Enhanced responsive styles for larger breakpoints */
 @media (max-width: var(--breakpoint-lg)) {
     .prep-card .letter {
         font-size: 22vh;
@@ -231,11 +102,6 @@
 }
 
 @media (max-width: var(--breakpoint-md)) {
-    .container-fluid {
-        padding: 0 var(--space-sm);
-        gap: 8px;
-    }
-    
     .prep-card .letter {
         font-size: 18vh;
     }
@@ -253,16 +119,6 @@
     .prep-card .phrase {
         font-size: 1.5em;
     }
-}
-
-/* Container styles */
-.container-fluid {
-    display: flex;
-    padding: 0 var(--space-md);
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    gap: 8px;
 }
 
 /* Add subtle background patterns */
@@ -287,9 +143,11 @@
     line-height: 1;
     padding: 20px 0;
     margin-top: 20px;
+    margin-bottom: 0;
     filter: drop-shadow(3px 3px 3px #000);
     overflow: hidden;
-    background-color: var(--color-yellow); /* Always show yellow background */
+    background-color: var(--color-yellow);
+    contain: layout style paint;
 }
 
 .static-kc-box span {
@@ -320,16 +178,10 @@
     opacity: 1;
 }
 
-/* Hero section styling */
-.hero {
-    padding: var(--space-xl) 0;
-    background-color: var(--color-navy);
-}
-
+/* Enhanced hero section styling */
 .hero p {
     font-family: 'DIN1451', sans-serif;
     font-weight: 400;
-    line-height: 1.2;
     transform: translateY(20px);
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
@@ -360,164 +212,187 @@
     }
 }
 
-@media (max-width: var(--breakpoint-md)) {
-    .container-fluid {
-        padding: 0 var(--space-md);
-    }
-    
-    .card {
-        margin: 0 var(--space-xs);
-    }
+/* Video Section with Map Background */
+.video-section-new {
+    position: relative;
+    background: 
+        linear-gradient(rgba(0, 51, 76, 0.7), rgba(0, 51, 76, 0.7)),
+        url('../img/PREP_KC_Map.png') center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 4rem 2rem;
 }
 
-/* Add subtle background patterns when not hovered */
-.card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-    opacity: 0.5;
-    z-index: 0;
+.video-trigger-container {
+    position: relative;
+    z-index: 10;
 }
 
-/* Enhanced phrase styling with more dramatic animation */
-.card .phrase {
-    display: none;
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-top: 20px;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-    opacity: 0;
-    transform: translateY(30px) scale(0.85); /* More dramatic initial position */
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy easing */
+.video-trigger-btn {
+    background: rgba(0, 51, 76, 0.9);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
 }
 
-.card:hover .phrase {
-    display: block;
-    opacity: 1;
-    transform: translateY(0) scale(1.1); /* Slightly larger end scale for emphasis */
-    animation: scaleBack 0.2s ease-out 0.25s forwards;
+.video-trigger-btn:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 3px var(--color-yellow, #F7E214);
+    background: rgba(0, 51, 76, 0.95);
 }
 
-/* Add a quick scale-back animation */
-@keyframes scaleBack {
-    0% { transform: translateY(0) scale(1.1); }
-    100% { transform: translateY(0) scale(1); }
+.video-trigger-btn .play-button {
+    width: 100px;
+    height: 100px;
+    background: var(--color-yellow, #F7E214);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-navy, #00334C);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.card .letter {
-    /* ... existing styles ... */
-    transition: all 0.2s ease-in-out;
+.video-trigger-btn:hover .play-button {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* Maintain consistent card width */
-.card:hover {
-    min-height: 45vh;
+.video-trigger-btn .play-button svg {
+    margin-left: 4px; /* Optical alignment */
+}
+
+.video-trigger-btn .video-info {
+    color: white;
+    text-align: left;
     flex: 1;
-    transform: translateY(-3px);
+}
+
+.video-trigger-btn .video-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: var(--color-yellow, #F7E214);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-trigger-btn .video-description {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Video Overlay Styles */
+.video-overlay {
+    backdrop-filter: blur(8px);
+}
+
+#video-content iframe {
+    width: 90vw;
+    height: 50.625vw; /* 16:9 aspect ratio */
+    max-height: 90vh;
+    max-width: calc(90vh * 16/9);
+    border: none;
+    border-radius: var(--radius-lg);
+}
+
+.btn-close {
+    background: var(--color-yellow, #F7E214);
+    color: var(--color-navy, #00334C);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    transform: scale(1.1);
+    background: white;
 }
 
 /* Responsive adjustments */
-@media (max-width: var(--breakpoint-lg)) {
-    .card {
-        height: 35vh;
+@media (max-width: 768px) {
+    .video-section-new {
+        min-height: 40vh;
+        padding: 2rem 1rem;
     }
     
-    .card .letter {
-        font-size: 18vh;
-    }
-}
-
-@media (max-width: var(--breakpoint-md)) {
-    .container-fluid {
-        padding: 0 var(--space-sm);
-        gap: 8px;
+    .video-trigger-btn {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        max-width: 90%;
     }
     
-    .card {
-        height: 35vh;
+    .video-trigger-btn .play-button {
+        width: 80px;
+        height: 80px;
     }
     
-    .card .letter {
-        font-size: 15vh;
+    .video-trigger-btn .video-info {
+        text-align: center;
     }
     
-    .card .phrase {
-        font-size: 1.8em;
-    }
-}
-
-@media (max-width: var(--breakpoint-sm)) {
-    .card {
-        height: 35vh;
+    .video-trigger-btn .video-title {
+        font-size: 1.5rem;
     }
     
-    .card .letter {
-        font-size: 12vh;
+    .video-trigger-btn .video-description {
+        font-size: 1rem;
+    }
+    
+    #video-content iframe {
+        width: 95vw;
+        height: 53.4375vw;
     }
 }
 
-/* Base card styles */
-.prep-card {
-    /* ... existing styles ... */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Letter styles - ensure perfect centering */
-.prep-card .letter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Phrase styles - improve centering and overlay */
-.prep-card .phrase {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    margin: 0;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 20%;
-}
-
-/* Text overlay for the first card */
-#card1 .phrase {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-}
-
-.video-section {
-    position: relative;
-    background: var(--color-navy);
-    padding: var(--space-xl) 0;
-}
-.ratio {
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
+@media (max-width: 480px) {
+    .video-section-new {
+        min-height: 35vh;
+        padding: 1.5rem 1rem;
+    }
+    
+    .video-trigger-btn {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .video-trigger-btn .play-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .video-trigger-btn .video-title {
+        font-size: 1.25rem;
+    }
+    
+    .video-trigger-btn .video-description {
+        font-size: 0.9rem;
+    }
 }
